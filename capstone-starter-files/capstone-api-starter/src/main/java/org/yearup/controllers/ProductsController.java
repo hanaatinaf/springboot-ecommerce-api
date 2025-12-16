@@ -10,7 +10,6 @@ import org.yearup.data.ProductDao;
 
 import java.math.BigDecimal;
 import java.util.List;
-
 @RestController
 @RequestMapping("products")
 @CrossOrigin
@@ -30,7 +29,7 @@ public class ProductsController
                                 @RequestParam(name="minPrice", required = false) BigDecimal minPrice,
                                 @RequestParam(name="maxPrice", required = false) BigDecimal maxPrice,
                                 @RequestParam(name="subCategory", required = false) String subCategory
-                                )
+    )
     {
         try
         {
@@ -81,7 +80,8 @@ public class ProductsController
     {
         try
         {
-            productDao.create(product);
+            product.setProductId(id);
+            productDao.update(id, product);
         }
         catch(Exception ex)
         {
