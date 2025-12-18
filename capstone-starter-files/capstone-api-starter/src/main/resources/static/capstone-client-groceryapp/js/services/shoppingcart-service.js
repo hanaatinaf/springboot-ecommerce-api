@@ -70,6 +70,8 @@ class ShoppingCartService {
     {
         const main = document.getElementById("main")
         main.innerHTML = "";
+        main.style.backgroundColor = "#f5f7fb";
+        main.style.padding = "20px";
 
         let div = document.createElement("div");
         div.classList="filter-box";
@@ -261,7 +263,7 @@ class ShoppingCartService {
             checkoutBtn.innerText = "Proceed to Checkout";
             checkoutBtn.style.width = "100%";
             checkoutBtn.style.padding = "12px";
-            checkoutBtn.style.backgroundColor = "#28a745";
+            checkoutBtn.style.backgroundColor = "#000000";
             checkoutBtn.style.color = "#fff";
             checkoutBtn.style.border = "none";
             checkoutBtn.style.borderRadius = "4px";
@@ -270,10 +272,10 @@ class ShoppingCartService {
             checkoutBtn.style.fontWeight = "bold";
             checkoutBtn.style.marginBottom = "10px";
             checkoutBtn.addEventListener("mouseover", () => {
-                checkoutBtn.style.backgroundColor = "#218838";
+                checkoutBtn.style.backgroundColor = "#333333";
             });
             checkoutBtn.addEventListener("mouseout", () => {
-                checkoutBtn.style.backgroundColor = "#28a745";
+                checkoutBtn.style.backgroundColor = "#000000";
             });
             summaryDiv.appendChild(checkoutBtn);
         }
