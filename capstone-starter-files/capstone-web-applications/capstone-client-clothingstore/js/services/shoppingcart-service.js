@@ -91,16 +91,31 @@ class ShoppingCartService {
         contentDiv.classList.add("content-form");
 
         const cartHeader = document.createElement("div")
-        cartHeader.classList.add("cart-header")
+        cartHeader.style.display = "flex";
+        cartHeader.style.justifyContent = "space-between";
+        cartHeader.style.alignItems = "center";
+        cartHeader.style.marginBottom = "30px";
+        cartHeader.style.paddingBottom = "20px";
+        cartHeader.style.borderBottom = "2px solid #e0e0e0";
 
         const h1 = document.createElement("h1")
-        h1.innerText = "Cart";
+        h1.innerText = "Shopping Cart";
+        h1.style.margin = "0";
+        h1.style.fontSize = "28px";
+        h1.style.color = "#111";
         cartHeader.appendChild(h1);
 
         const button = document.createElement("button");
         button.classList.add("btn")
-        button.classList.add("btn-danger")
-        button.innerText = "Clear";
+        button.innerText = "Clear Cart";
+        button.style.padding = "10px 20px";
+        button.style.backgroundColor = "#d73212";
+        button.style.color = "#fff";
+        button.style.border = "none";
+        button.style.borderRadius = "4px";
+        button.style.cursor = "pointer";
+        button.style.fontSize = "14px";
+        button.style.fontWeight = "500";
         button.addEventListener("click", () => this.clearCart());
         cartHeader.appendChild(button)
 
@@ -159,129 +174,62 @@ class ShoppingCartService {
         }
     }
 
-    buildItem(item, parent)
-    {
-        let itemDiv = document.createElement("div");
-        itemDiv.style.border = "1px solid #ddd";
-        itemDiv.style.borderRadius = "5px";
-        itemDiv.style.padding = "15px";
+    buildItem(cartItem, container) {
+        const itemDiv = document.createElement("div");
+        itemDiv.innerText = cartItem.name;
+        itemDiv.classList.add("cartItem");
         itemDiv.style.marginBottom = "15px";
-        itemDiv.style.backgroundColor = "#f9f9f9";
 
-        // Row 1: Image, Name, Price
-        let row1 = document.createElement("div");
-        row1.style.display = "flex";
-        row1.style.gap = "20px";
-        row1.style.marginBottom = "10px";
+        const priceDiv = document.createElement("div");
+        priceDiv.innerText = "Price: $" + parseFloat(cartItem.price).toFixed(2);
 
-        // Image
-        let imgContainer = document.createElement("div");
-        imgContainer.style.flexShrink = "0";
-        let img = document.createElement("img");
-        img.src = `/images/products/${item.product.imageUrl}`;
-        img.style.width = "100px";
-        img.style.height = "100px";
-        img.style.objectFit = "cover";
-        img.style.border = "1px solid #ddd";
-        img.style.cursor = "pointer";
-        img.addEventListener("click", () => {
-            showImageDetailForm(item.product.name, img.src)
-        })
-        imgContainer.appendChild(img);
-        row1.appendChild(imgContainer);
+        const quantityDiv = document.createElement("div");
+        quantityDiv.innerText = "Quantity: ";
 
-        // Product info
-        let infoDiv = document.createElement("div");
-        infoDiv.style.flex = "1";
+        const quantitySelect = document.createElement("select");
+        quantitySelect.name = "quantity";
 
-        let nameH3 = document.createElement("h3");
-        nameH3.innerText = item.product.name;
-        nameH3.style.margin = "0 0 8px 0";
-        nameH3.style.fontSize = "20px";
-        infoDiv.appendChild(nameH3);
+        for (let i = 1; i <= 10; i++) {
+            const option = document.createElement("option");
+            option.value = i;
+            if (i === cartItem.quantity) {
+                option.selected = true;
+            }
+            option.innerText = i;
+            quantitySelect.appendChild(option);
+        }
 
-        let priceSpan = document.createElement("span");
-        priceSpan.innerText = `$${parseFloat(item.product.price).toFixed(2)}`;
-        priceSpan.style.fontSize = "18px";
-        priceSpan.style.fontWeight = "bold";
-        priceSpan.style.color = "#28a745";
-        infoDiv.appendChild(priceSpan);
+        quantityDiv.appendChild(quantitySelect);
 
-        let descP = document.createElement("p");
-        descP.innerText = item.product.description;
-        descP.style.fontSize = "14px";
-        descP.style.color = "#666";
-        descP.style.margin = "10px 0";
-        infoDiv.appendChild(descP);
-
-        row1.appendChild(infoDiv);
-        itemDiv.appendChild(row1);
-
-        // Row 2: Quantity, Line Total, Remove Button
-        let row2 = document.createElement("div");
-        row2.style.display = "flex";
-        row2.style.gap = "20px";
-        row2.style.alignItems = "center";
-        row2.style.paddingTop = "10px";
-        row2.style.borderTop = "1px solid #ddd";
-
-        // Quantity Control
-        let qtyLabel = document.createElement("label");
-        qtyLabel.innerText = "Quantity: ";
-        qtyLabel.style.fontWeight = "bold";
-        row2.appendChild(qtyLabel);
-
-        let qtyInput = document.createElement("input");
-        qtyInput.type = "number";
-        qtyInput.min = "1";
-        qtyInput.value = item.quantity;
-        qtyInput.style.width = "70px";
-        qtyInput.style.padding = "8px";
-        qtyInput.style.border = "1px solid #ddd";
-        qtyInput.style.borderRadius = "4px";
-        qtyInput.addEventListener("change", () => {
-            let newQty = parseInt(qtyInput.value || "0", 10);
-            if (isNaN(newQty) || newQty < 0) newQty = 0;
-
-            const url = `${config.baseUrl}/cart/products/${item.product.productId}`;
-            axios.put(url, { quantity: newQty })
-                .then(response => {
-                    this.setCart(response.data);
-                    this.updateCartDisplay();
-                    this.loadCartPage();
-                })
-                .catch(error => {
-                    const data = {
-                        error: "Update quantity failed."
-                    };
-                    templateBuilder.append("error", data, "errors")
-                })
+        quantitySelect.addEventListener("change", () => {
+            const newQuantity = parseInt(quantitySelect.value);
+            if (newQuantity !== cartItem.quantity) {
+                this.updateQuantity(cartItem.productId, newQuantity);
+            }
         });
-        row2.appendChild(qtyInput);
 
-        // Line Total
-        let lineTotalDiv = document.createElement("div");
-        lineTotalDiv.style.flex = "1";
-        lineTotalDiv.style.textAlign = "right";
-        lineTotalDiv.style.fontSize = "16px";
-        lineTotalDiv.style.fontWeight = "bold";
-        const lineTotal = (item.product.price * item.quantity).toFixed(2);
-        lineTotalDiv.innerText = `Line Total: $${lineTotal}`;
-        row2.appendChild(lineTotalDiv);
+        const updateBtn = document.createElement("button");
+        updateBtn.innerText = "Update";
+        updateBtn.classList.add("btn", "btn-success");
+        updateBtn.addEventListener("click", () => {
+            const newQuantity = parseInt(quantitySelect.value);
+            if (newQuantity !== cartItem.quantity) {
+                this.updateQuantity(cartItem.productId, newQuantity);
+            }
+        });
 
-        // Remove Button
-        let removeBtn = document.createElement("button");
+        const removeBtn = document.createElement("button");
         removeBtn.classList.add("btn", "btn-danger");
-        removeBtn.innerText = "Remove";
-        removeBtn.style.padding = "8px 15px";
-        removeBtn.style.whiteSpace = "nowrap";
+        removeBtn.innerText = "Remove from cart";
         removeBtn.addEventListener("click", () => {
-            this.removeFromCart(item.product.productId);
+            this.removeFromCart(cartItem.productId);
         });
-        row2.appendChild(removeBtn);
 
-        itemDiv.appendChild(row2);
-        parent.appendChild(itemDiv);
+        itemDiv.appendChild(priceDiv);
+        itemDiv.appendChild(quantityDiv);
+        itemDiv.appendChild(updateBtn);
+        itemDiv.appendChild(removeBtn);
+        container.appendChild(itemDiv);
     }
 
     removeFromCart(productId)
