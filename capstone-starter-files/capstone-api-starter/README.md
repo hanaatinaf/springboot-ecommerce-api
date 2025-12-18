@@ -1,6 +1,6 @@
 # Grocery App API (simple guide)
 
-A Spring Boot + MySQL backend for a grocery storefront. Basic English, step by step, with class map and demo script.
+A Spring Boot + MySQL backend for a grocery storefront
 
 ## 1) What this app does
 - Shows products and categories
