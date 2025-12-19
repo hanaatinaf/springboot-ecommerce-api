@@ -19,6 +19,10 @@ The backend is built with **Spring Boot + MySQL**, secured using **JWT authentic
 
 
 
+https://github.com/user-attachments/assets/90c17036-97ac-47e6-9a99-f28a0c3804dc
+
+
+
 ---
 
 ## 📋 Table of Contents
