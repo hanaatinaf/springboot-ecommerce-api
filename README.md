@@ -1,121 +1,195 @@
-# Grocery App API (simple guide)
 
-A Spring Boot + MySQL backend for a grocery storefront
 
-## 1) What this app does
-- Shows products and categories
-- Lets users register, log in (JWT), edit profile
-- Lets users build a cart (add, update qty, delete, clear)
-- Serves a small frontend (HTML/CSS/JS) from the same server
+# 🛒 Grocery App – Spring Boot E-Commerce API
 
-## 2) How pieces connect (plain words)
-- Controllers (handle HTTP)
-  - Auth: [src/main/java/org/yearup/controllers/AuthenticationController.java](src/main/java/org/yearup/controllers/AuthenticationController.java)
-    - POST /register, POST /login
-  - Products: [src/main/java/org/yearup/controllers/ProductsController.java](src/main/java/org/yearup/controllers/ProductsController.java)
-    - GET /products, GET /products/{id}
-  - Categories: [src/main/java/org/yearup/controllers/CategoriesController.java](src/main/java/org/yearup/controllers/CategoriesController.java)
-    - GET /categories
-  - Profile: [src/main/java/org/yearup/controllers/ProfileController.java](src/main/java/org/yearup/controllers/ProfileController.java)
-    - GET /profile, PUT /profile (needs auth)
-  - Cart: [src/main/java/org/yearup/controllers/ShoppingCartController.java](src/main/java/org/yearup/controllers/ShoppingCartController.java)
-    - GET /cart, POST /cart/products/{id}, PUT /cart/products/{id}, DELETE /cart/products/{id}, DELETE /cart (needs auth)
+A full-stack **Spring Boot grocery store application** that allows users to browse products, filter by category and price, manage a shopping cart, and update their user profile.
+The backend is built with **Spring Boot + MySQL**, secured using **JWT authentication**, and serves a simple frontend using **HTML, CSS, and JavaScript**.
 
-- DAO layer (talks to MySQL)
-  - Interfaces in [src/main/java/org/yearup/data](src/main/java/org/yearup/data)
-  - MySQL implementations in [src/main/java/org/yearup/data/mysql](src/main/java/org/yearup/data/mysql)
-  - Examples: [MySqlProductDao](src/main/java/org/yearup/data/mysql/MySqlProductDao.java), [MySqlCategoryDao](src/main/java/org/yearup/data/mysql/MySqlCategoryDao.java), [MySqlProfileDao](src/main/java/org/yearup/data/mysql/MySqlProfileDao.java), [MySqlShoppingCartDao](src/main/java/org/yearup/data/mysql/MySqlShoppingCartDao.java)
+---
 
-- Models (data shapes)
-  - In [src/main/java/org/yearup/models](src/main/java/org/yearup/models): Product, Category, Profile, ShoppingCart, ShoppingCartItem, User
-  - Auth DTOs in [src/main/java/org/yearup/models/authentication](src/main/java/org/yearup/models/authentication)
 
-- Security (JWT)
-  - Config: [src/main/java/org/yearup/security/WebSecurityConfig.java](src/main/java/org/yearup/security/WebSecurityConfig.java)
-  - Token: [src/main/java/org/yearup/security/jwt/TokenProvider.java](src/main/java/org/yearup/security/jwt/TokenProvider.java)
-  - Filter: [src/main/java/org/yearup/security/jwt/JWTFilter.java](src/main/java/org/yearup/security/jwt/JWTFilter.java)
+## 🧑‍💻 Author
 
-- Frontend (static)
-  - Lives in [src/main/resources/static/capstone-client-groceryapp](src/main/resources/static/capstone-client-groceryapp)
-  - Key JS: [js/application.js](src/main/resources/static/capstone-client-groceryapp/js/application.js), [js/template-builder.js](src/main/resources/static/capstone-client-groceryapp/js/template-builder.js), services under [js/services](src/main/resources/static/capstone-client-groceryapp/js/services)
+**Hana Atinaf**
+*Built as part of the Year Up Java Focus Academy to demonstrate REST APIs, Spring Security, JWT, and database integration.*
 
-## 3) Data flow (example request)
-1. Client calls controller (e.g., GET /products)
-2. Controller asks DAO for data
-3. DAO runs SQL against MySQL
-4. Controller returns JSON
-5. Frontend renders it (Mustache templates + JS services)
+---
 
-## 4) Setup (DB)
-1. Start MySQL
-2. Run `database/create_database_groceryapp.sql`
-3. Defaults (see [src/main/resources/application.properties](src/main/resources/application.properties)):
-   - url: jdbc:mysql://localhost:3306/groceryapp
-   - user: root
-   - pass: yearup24
+## 🎥 Demo Video 
 
-## 5) Run the app
-From project root:
-```sh
-mvn spring-boot:run
+
+
+---
+
+## 📋 Table of Contents
+
+* [Features](#features)
+* [Project Structure](#project-structure)
+* [Frontend Screens](#frontend-screens)
+* [API Overview](#api-overview)
+* [Usage](#usage)
+* [Technologies Used](#technologies-used)
+* [Key Skills Demonstrated](#key-skills-demonstrated)
+* [Future Improvements](#future-improvements)
+
+---
+
+## ✨ Features
+
+### 🏠 **Product Browsing**
+
+* View all grocery products
+* Filter by **category**
+* Filter by **minimum and maximum price**
+* Filter by **type**
+* Product images and descriptions displayed
+
+### 🔐 **Authentication**
+
+* User login with username and password
+* JWT token used to protect secure endpoints
+* Login modal integrated into frontend
+
+### 🛒 **Shopping Cart**
+
+* Add products to cart
+* Update item quantity
+* Remove items from cart
+* Clear entire cart
+* Automatic subtotal, tax, and total calculation
+
+### 👤 **User Profile**
+
+* View profile information
+* Update name, email, phone, and address
+* Profile changes saved to database
+
+---
+
+## 🗂️ Project Structure
+
 ```
-Then open `http://localhost:8080` for the UI.
-
-## 6) Quick auth + test (Insomnia/Postman)
-1) Register (optional):
-   - POST http://localhost:8080/register
-   - JSON body:
-```json
-{
-  "username": "tester",
-  "password": "Test123!",
-  "role": "ROLE_USER"
-}
+org.yearup
+├── controllers        # REST API controllers
+├── models             # User, Product, Category, Cart, Profile
+├── dao                # Database access layer (MySQL)
+├── security           # JWT & Spring Security configuration
+├── resources
+│   ├── static         # Frontend (HTML/CSS/JS)
+│   └── application.properties
+└── Application.java
 ```
-2) Login and get JWT:
-   - POST http://localhost:8080/login
-   - Body:
-```json
-{
-  "username": "tester",
-  "password": "Test123!"
-}
+
+---
+
+## 📸 Frontend Screens
+
+### 🛒 Product Browsing & Filters
+
+<img width="1700" height="939" alt="Screenshot 2025-12-18 at 10 34 28 PM" src="https://github.com/user-attachments/assets/2158c1d9-fae5-4541-b3d7-7eead6bf8ba6" />
+
+
+
+### 🔐 Login
+<img width="1700" height="408" alt="Screenshot 2025-12-18 at 10 35 31 PM" src="https://github.com/user-attachments/assets/0b44ed90-eee8-48a7-ada2-6462a972da72" />
+
+
+### 🧾 Shopping Cart
+<img width="1700" height="940" alt="Screenshot 2025-12-18 at 10 36 53 PM" src="https://github.com/user-attachments/assets/97766fbb-ecc9-4ccc-9ad7-6c4ab0d4ba47" />
+
+<img width="1700" height="940" alt="Screenshot 2025-12-18 at 10 36 18 PM" src="https://github.com/user-attachments/assets/d1a3f4cc-4fe2-4b73-a840-e8fdbcecf325" />
+
+
+### 👤 User Profile
+<img width="1700" height="940" alt="Screenshot 2025-12-18 at 10 37 27 PM" src="https://github.com/user-attachments/assets/b609d4e8-0aae-481c-91b9-3cc3990db573" />
+
+
+
+---
+
+## 🔧 API Overview
+
+### Authentication
+
+* `POST /register`
+* `POST /login`
+
+### Products
+
+* `GET /products`
+* `GET /products/{id}`
+* `GET /products?cat=&minPrice=&maxPrice=&subCategory=`
+
+### Categories
+
+* `GET /categories`
+* `GET /categories/{id}`
+
+### Shopping Cart *(JWT Required)*
+
+* `GET /cart`
+* `POST /cart/products/{id}`
+* `PUT /cart/products/{id}`
+* `DELETE /cart/products/{id}`
+* `DELETE /cart`
+
+### Profile *(JWT Required)*
+
+* `GET /profile`
+* `PUT /profile`
+
+---
+
+## ▶️ Usage
+
+1. Create MySQL database
+2. Configure `application.properties`
+3. Run Spring Boot application
+4. Open browser:
+
 ```
-   - Copy token, use header `Authorization: Bearer <token>`
+http://localhost:63342 
+```
 
-3) Try endpoints (with token):
-   - Products: GET /products
-   - Categories: GET /categories
-   - Profile: GET /profile, PUT /profile (send Profile JSON)
-   - Cart: GET /cart; POST /cart/products/1; PUT /cart/products/1 with `{ "quantity": 2 }`; DELETE /cart/products/1; DELETE /cart
+5. Test APIs using **Insomnia** or **Postman**
 
-## 7) Presenting the project (simple script)
-1. Say what it is: "Spring Boot + MySQL grocery API with JWT login; serves a small frontend."
-2. Show login/register in Insomnia, copy token.
-3. Show GET /products response.
-4. Add to cart (POST /cart/products/1), then GET /cart to show items and totals.
-5. Update profile (PUT /profile), then GET /profile to show changes.
-6. Open the UI at `http://localhost:8080` and click through products and cart.
+---
 
-## 8) Common issues
-- 401 Unauthorized: add `Authorization: Bearer <token>`
-- DB errors: check MySQL is running and credentials match application.properties
-- Port busy: change `server.port` in application.properties
+## 🛠️ Technologies Used
 
-## 9) What you built (one-liners)
-- Controllers: map URLs to logic
-- DAOs: run SQL for controllers
-- Models: carry data between layers
-- Security: protects routes with JWT
-- Frontend: renders products, cart, profile using the API
+* **Java**
+* **Spring Boot**
+* **Spring Security**
+* **JWT Authentication**
+* **MySQL**
+* **Maven**
+* **HTML / CSS / JavaScript**
+* **Insomnia / Postman**
 
-## 10) File map (quick jump)
-- Config: [application.properties](src/main/resources/application.properties)
-- DB script: [database/create_database_groceryapp.sql](database/create_database_groceryapp.sql)
-- Controllers: [src/main/java/org/yearup/controllers](src/main/java/org/yearup/controllers)
-- DAOs: [src/main/java/org/yearup/data](src/main/java/org/yearup/data) and [src/main/java/org/yearup/data/mysql](src/main/java/org/yearup/data/mysql)
-- Models: [src/main/java/org/yearup/models](src/main/java/org/yearup/models)
-- Security: [src/main/java/org/yearup/security](src/main/java/org/yearup/security)
-- Frontend: [src/main/resources/static/capstone-client-groceryapp](src/main/resources/static/capstone-client-groceryapp)
+---
 
-Talk through these steps and you will have a clear, simple presentation.
+## 🧠 Key Skills Demonstrated
+
+1. REST API design
+2. JWT authentication and authorization
+3. Secure backend development
+4. Database design and MySQL integration
+5. MVC architecture
+6. Shopping cart logic
+7. API testing and debugging
+8. Full-stack development workflow
+
+---
+
+## 🚀 Future Improvements
+
+* Checkout and order processing
+* Admin dashboard
+* Product search
+* Pagination
+* Unit and integration testing
+* Improved frontend UI
+
+---
+
+
