@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hana Atinaf | Java Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ======== NAVBAR ======== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <a href="#home"><span class="logo-bracket">&lt;</span>HA<span class="logo-bracket">/&gt;</span></a>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about"><span class="nav-num">01.</span> About</a></li>
+      <li><a href="#skills"><span class="nav-num">02.</span> Skills</a></li>
+      <li><a href="#projects"><span class="nav-num">03.</span> Projects</a></li>
+      <li><a href="#contact"><span class="nav-num">04.</span> Contact</a></li>
+      <li>
+        <a href="https://github.com/hanaatinaf" target="_blank" class="btn-outline nav-btn">Resume</a>
+      </li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ======== HERO ======== -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="hero-greeting">Hi, my name is</p>
+      <h1 class="hero-name">Hana Atinaf.</h1>
+      <h2 class="hero-title">I build things for the web.</h2>
+      <p class="hero-desc">
+        I'm a Java developer specializing in building robust, secure backend systems.
+        Currently focused on REST APIs, Spring Boot, and full-stack web development
+        through the <span class="accent">Year Up Java Focus Academy</span>.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="#contact" class="btn-ghost">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-indicator">
+        <div class="scroll-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== ABOUT ======== -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title"><span class="section-num">01.</span> About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Hello! I'm Hana, a passionate software developer with a focus on building
+            meaningful and impactful applications. My journey into tech started at
+            <span class="accent">Year Up Java Focus Academy</span>, where I immersed
+            myself in Java development, REST APIs, and modern software engineering practices.
+          </p>
+          <p>
+            I enjoy building things — from backend APIs that power real-world applications
+            to full-stack systems that deliver great user experiences. I'm always looking
+            to grow, collaborate, and take on new challenges.
+          </p>
+          <p>Here are some technologies I've been working with:</p>
+          <ul class="tech-list">
+            <li>Java</li>
+            <li>Spring Boot</li>
+            <li>Spring Security</li>
+            <li>JWT Authentication</li>
+            <li>MySQL</li>
+            <li>JavaScript</li>
+            <li>HTML &amp; CSS</li>
+            <li>Maven</li>
+          </ul>
+        </div>
+        <div class="about-image-wrap">
+          <div class="about-image">
+            <div class="avatar-placeholder">
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="35" r="20" fill="#64ffda" opacity="0.3"/>
+                <circle cx="50" cy="35" r="14" fill="#64ffda" opacity="0.5"/>
+                <ellipse cx="50" cy="90" rx="30" ry="20" fill="#64ffda" opacity="0.3"/>
+                <ellipse cx="50" cy="90" rx="22" ry="14" fill="#64ffda" opacity="0.5"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== SKILLS ======== -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <h2 class="section-title"><span class="section-num">02.</span> Skills &amp; Technologies</h2>
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <div class="skill-icon">☕</div>
+          <h3>Java</h3>
+          <p>Core Java, OOP, Collections, Exception Handling</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🌱</div>
+          <h3>Spring Boot</h3>
+          <p>REST APIs, MVC Architecture, Spring Security, JWT</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🗄️</div>
+          <h3>Databases</h3>
+          <p>MySQL, SQL queries, Database Design, DAO Pattern</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🔐</div>
+          <h3>Security</h3>
+          <p>JWT Authentication, Spring Security, Role-based Access</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🌐</div>
+          <h3>Frontend</h3>
+          <p>HTML5, CSS3, JavaScript, Responsive Design</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🔧</div>
+          <h3>Tools</h3>
+          <p>Git, Maven, Insomnia, Postman, IntelliJ IDEA</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== PROJECTS ======== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title"><span class="section-num">03.</span> Projects</h2>
+      <p class="section-sub">Some things I've built</p>
+
+      <!-- Featured Project -->
+      <div class="featured-project">
+        <div class="project-img-wrap">
+          <div class="project-img-placeholder">
+            <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="250" fill="#112240"/>
+              <rect x="20" y="20" width="360" height="30" rx="4" fill="#1d3557" opacity="0.8"/>
+              <rect x="30" y="28" width="80" height="14" rx="3" fill="#64ffda" opacity="0.6"/>
+              <rect x="20" y="70" width="170" height="14" rx="3" fill="#8892b0" opacity="0.5"/>
+              <rect x="20" y="94" width="140" height="14" rx="3" fill="#8892b0" opacity="0.4"/>
+              <rect x="20" y="118" width="160" height="14" rx="3" fill="#8892b0" opacity="0.4"/>
+              <rect x="20" y="150" width="120" height="28" rx="4" fill="#64ffda" opacity="0.3"/>
+              <rect x="155" y="150" width="100" height="28" rx="4" fill="#112240" opacity="0.6"/>
+              <rect x="240" y="60" width="130" height="160" rx="6" fill="#1d3557" opacity="0.7"/>
+              <rect x="252" y="72" width="106" height="70" rx="4" fill="#0a192f" opacity="0.9"/>
+              <rect x="252" y="152" width="50" height="10" rx="2" fill="#64ffda" opacity="0.5"/>
+              <rect x="252" y="168" width="70" height="10" rx="2" fill="#8892b0" opacity="0.4"/>
+              <rect x="252" y="184" width="60" height="10" rx="2" fill="#8892b0" opacity="0.3"/>
+            </svg>
+          </div>
+        </div>
+        <div class="project-info">
+          <p class="project-overline">Featured Project</p>
+          <h3 class="project-title">
+            <a href="https://github.com/hanaatinaf/springboot-ecommerce-api" target="_blank">
+              Grocery Store E-Commerce API
+            </a>
+          </h3>
+          <div class="project-desc-card">
+            <p>
+              A full-stack grocery store application where users can browse products,
+              filter by category and price, manage a shopping cart, and update their
+              profile. Built with <span class="accent">Spring Boot</span> and secured
+              with <span class="accent">JWT authentication</span>.
+            </p>
+          </div>
+          <ul class="project-tech">
+            <li>Java</li>
+            <li>Spring Boot</li>
+            <li>JWT</li>
+            <li>MySQL</li>
+            <li>JavaScript</li>
+            <li>HTML/CSS</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/hanaatinaf/springboot-ecommerce-api" target="_blank" class="project-link" aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other Projects Grid -->
+      <h3 class="other-projects-title">Other Noteworthy Projects</h3>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="card-top">
+            <div class="folder-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/hanaatinaf/springboot-ecommerce-api" target="_blank" aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3>Shopping Cart API</h3>
+          <p>REST endpoints for managing cart operations — add, update, remove items, auto-calculate subtotal, tax, and total.</p>
+          <ul class="card-tech">
+            <li>Spring Boot</li><li>MySQL</li><li>REST</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <div class="card-top">
+            <div class="folder-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/hanaatinaf/springboot-ecommerce-api" target="_blank" aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3>JWT Auth System</h3>
+          <p>Secure user authentication flow with JWT tokens, Spring Security configuration, and role-based access control.</p>
+          <ul class="card-tech">
+            <li>JWT</li><li>Spring Security</li><li>Java</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <div class="card-top">
+            <div class="folder-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/hanaatinaf/springboot-ecommerce-api" target="_blank" aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3>Product Filter API</h3>
+          <p>Dynamic product search with filters for category, price range, and product type. Clean DAO pattern with MySQL integration.</p>
+          <ul class="card-tech">
+            <li>MySQL</li><li>Maven</li><li>HTML/CSS/JS</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CONTACT ======== -->
+  <section class="section section-alt" id="contact">
+    <div class="container contact-container">
+      <p class="contact-overline"><span class="section-num">04.</span> What's Next?</p>
+      <h2 class="contact-title">Get In Touch</h2>
+      <p class="contact-desc">
+        I'm currently open to new opportunities. Whether you have a question,
+        a project idea, or just want to say hi — my inbox is always open!
+      </p>
+      <a href="mailto:hana@example.com" class="btn-primary contact-btn">Say Hello</a>
+
+      <div class="social-links">
+        <a href="https://github.com/hanaatinaf" target="_blank" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/hanaatinaf" target="_blank" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="footer">
+    <p>Designed &amp; Built by <span class="accent">Hana Atinaf</span></p>
+    <p class="footer-sub">Built with HTML, CSS &amp; JavaScript</p>
+  </footer>
+
+  <!-- Side Social Bar -->
+  <div class="side-social left">
+    <ul>
+      <li>
+        <a href="https://github.com/hanaatinaf" target="_blank" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://linkedin.com/in/hanaatinaf" target="_blank" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Side Email Bar -->
+  <div class="side-social right">
+    <a href="mailto:hana@example.com" class="side-email">hana@example.com</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
