@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hana Atinaf | Java Developer</title>
+  <title>Hana Atinaf | Software Developer</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
@@ -17,11 +17,13 @@
     </div>
     <ul class="nav-links" id="nav-links">
       <li><a href="#about"><span class="nav-num">01.</span> About</a></li>
-      <li><a href="#skills"><span class="nav-num">02.</span> Skills</a></li>
-      <li><a href="#projects"><span class="nav-num">03.</span> Projects</a></li>
-      <li><a href="#contact"><span class="nav-num">04.</span> Contact</a></li>
+      <li><a href="#experience"><span class="nav-num">02.</span> Experience</a></li>
+      <li><a href="#skills"><span class="nav-num">03.</span> Skills</a></li>
+      <li><a href="#projects"><span class="nav-num">04.</span> Projects</a></li>
+      <li><a href="#education"><span class="nav-num">05.</span> Education</a></li>
+      <li><a href="#contact"><span class="nav-num">06.</span> Contact</a></li>
       <li>
-        <a href="https://github.com/hanaatinaf" target="_blank" class="btn-outline nav-btn">Resume</a>
+        <a href="mailto:hanaatinaf2@gmail.com" class="btn-outline nav-btn">Resume</a>
       </li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -34,11 +36,12 @@
     <div class="hero-content">
       <p class="hero-greeting">Hi, my name is</p>
       <h1 class="hero-name">Hana Atinaf.</h1>
-      <h2 class="hero-title">I build things for the web.</h2>
+      <h2 class="hero-title" id="typed-title">I build things for the web.</h2>
       <p class="hero-desc">
-        I'm a Java developer specializing in building robust, secure backend systems.
-        Currently focused on REST APIs, Spring Boot, and full-stack web development
-        through the <span class="accent">Year Up Java Focus Academy</span>.
+        I'm a Computer Science student and
+        <span class="accent">Solution Architect Intern at BECU</span>,
+        bridging business needs and technical solutions through API analysis,
+        cloud architecture, and enterprise system integration.
       </p>
       <div class="hero-cta">
         <a href="#projects" class="btn-primary">View My Work</a>
@@ -59,26 +62,35 @@
       <div class="about-grid">
         <div class="about-text">
           <p>
-            Hello! I'm Hana, a passionate software developer with a focus on building
-            meaningful and impactful applications. My journey into tech started at
-            <span class="accent">Year Up Java Focus Academy</span>, where I immersed
-            myself in Java development, REST APIs, and modern software engineering practices.
+            Hello! I'm Hana — a motivated Computer Science student and
+            <span class="accent">Solution Architect (MDX) Intern at BECU</span>
+            with real-world experience in API analysis, system integration, and
+            cloud architecture. I bridge business needs and technical solutions
+            every day alongside senior architects on enterprise-level initiatives.
           </p>
           <p>
-            I enjoy building things — from backend APIs that power real-world applications
-            to full-stack systems that deliver great user experiences. I'm always looking
-            to grow, collaborate, and take on new challenges.
+            My journey spans from earning an Associate of Science in Computer Science
+            at Community College of Aurora, to completing Year Up's intensive
+            Application Development program, to now pursuing my B.A. at the
+            <span class="accent">University of Colorado Denver</span>. I'm also
+            a <span class="accent">Professional Scrum Master I (PSM I)</span> certified
+            practitioner and currently working toward a CodePath Cybersecurity certification.
           </p>
-          <p>Here are some technologies I've been working with:</p>
+          <p>
+            I love solving real problems — whether it's designing secure APIs,
+            mapping conversational IVA flows to backend services, or building
+            full-stack Java apps from the ground up. Amharic fluent. Colorado proud.
+          </p>
+          <p>Technologies I've been working with:</p>
           <ul class="tech-list">
             <li>Java</li>
+            <li>Python</li>
+            <li>SQL / C++</li>
             <li>Spring Boot</li>
-            <li>Spring Security</li>
-            <li>JWT Authentication</li>
-            <li>MySQL</li>
-            <li>JavaScript</li>
-            <li>HTML &amp; CSS</li>
-            <li>Maven</li>
+            <li>Microsoft Azure</li>
+            <li>.NET</li>
+            <li>GraphQL / JSON</li>
+            <li>AI / GenAI</li>
           </ul>
         </div>
         <div class="about-image-wrap">
@@ -97,56 +109,140 @@
     </div>
   </section>
 
-  <!-- ======== SKILLS ======== -->
-  <section class="section section-alt" id="skills">
+  <!-- ======== EXPERIENCE ======== -->
+  <section class="section section-alt" id="experience">
     <div class="container">
-      <h2 class="section-title"><span class="section-num">02.</span> Skills &amp; Technologies</h2>
+      <h2 class="section-title"><span class="section-num">02.</span> Work Experience</h2>
+      <div class="experience-layout">
+
+        <!-- Tab Buttons -->
+        <ul class="exp-tabs" role="tablist">
+          <li role="tab" class="exp-tab active" data-target="becu">BECU</li>
+          <li role="tab" class="exp-tab" data-target="hopskip">HopSkipDrive</li>
+        </ul>
+
+        <!-- Tab Panels -->
+        <div class="exp-panels">
+
+          <div class="exp-panel active" id="panel-becu">
+            <div class="exp-header">
+              <h3>Solution Architect (MDX) Intern
+                <span class="exp-company">@ <a href="https://www.becu.org" target="_blank" rel="noopener">BECU</a></span>
+              </h3>
+              <p class="exp-date">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                January 2026 – Present &nbsp;·&nbsp; Tukwila, WA
+              </p>
+            </div>
+            <ul class="exp-bullets">
+              <li>Supported two major 2026 enterprise initiatives — <span class="accent">Contact Center Modernization</span> &amp; <span class="accent">Digital Rationalization</span> — by validating API behavior, documenting findings, and contributing to architectural discussions across teams.</li>
+              <li>Conducted end-to-end API and data gap analysis for IVA Transaction History, identifying missing backend capabilities and ensuring alignment between business needs and NiCE services.</li>
+              <li>Collaborated with Senior Solution Architects to map IVA conversational requirements to NiCE backend services, improving integration across multiple systems within <span class="accent">.NET / Azure</span> environments.</li>
+              <li>Produced structured technical documentation and communicated results in weekly updates, improving team clarity and accelerating decision-making for real-time data integration.</li>
+              <li>Utilized <span class="accent">AI / GenAI</span> and JSON within Azure environments to optimize digital service delivery.</li>
+            </ul>
+          </div>
+
+          <div class="exp-panel" id="panel-hopskip">
+            <div class="exp-header">
+              <h3>Student Driver / Care Team
+                <span class="exp-company">@ <a href="https://www.hopskipdrive.com" target="_blank" rel="noopener">HopSkipDrive</a></span>
+              </h3>
+              <p class="exp-date">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                September 2021 – January 2026 &nbsp;·&nbsp; Denver, CO
+              </p>
+            </div>
+            <ul class="exp-bullets">
+              <li>Maintained <span class="accent">100% on-time arrival</span> and zero safety incidents across 500+ trips by adhering to strict protocols.</li>
+              <li>Communicated safety concerns and operational updates to dispatch to ensure real-time security.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== SKILLS ======== -->
+  <section class="section" id="skills">
+    <div class="container">
+      <h2 class="section-title"><span class="section-num">03.</span> Skills &amp; Technologies</h2>
       <div class="skills-grid">
 
         <div class="skill-card">
           <div class="skill-icon">☕</div>
-          <h3>Java</h3>
-          <p>Core Java, OOP, Collections, Exception Handling</p>
+          <h3>Languages</h3>
+          <p>Java, Python, SQL, C++, JSON</p>
         </div>
 
         <div class="skill-card">
-          <div class="skill-icon">🌱</div>
-          <h3>Spring Boot</h3>
-          <p>REST APIs, MVC Architecture, Spring Security, JWT</p>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-icon">🗄️</div>
-          <h3>Databases</h3>
-          <p>MySQL, SQL queries, Database Design, DAO Pattern</p>
+          <div class="skill-icon">☁️</div>
+          <h3>Cloud &amp; Platforms</h3>
+          <p>Microsoft Azure, .NET, NICE CXone, NICE inContact, AI/GenAI</p>
         </div>
 
         <div class="skill-card">
           <div class="skill-icon">🔐</div>
           <h3>Security</h3>
-          <p>JWT Authentication, Spring Security, Role-based Access</p>
+          <p>API Security, Threat Mitigation, IAM, Risk Assessment, SDLC</p>
         </div>
 
         <div class="skill-card">
-          <div class="skill-icon">🌐</div>
-          <h3>Frontend</h3>
-          <p>HTML5, CSS3, JavaScript, Responsive Design</p>
+          <div class="skill-icon">🔗</div>
+          <h3>APIs &amp; Integration</h3>
+          <p>REST, GraphQL, JSON schema validation, Postman, API gap analysis</p>
         </div>
 
         <div class="skill-card">
-          <div class="skill-icon">🔧</div>
-          <h3>Tools</h3>
-          <p>Git, Maven, Insomnia, Postman, IntelliJ IDEA</p>
+          <div class="skill-icon">📊</div>
+          <h3>Data &amp; Analytics</h3>
+          <p>Tableau, Power BI, Salesforce, Selenium, CSV / SQL data management</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🛠️</div>
+          <h3>Tools &amp; Methods</h3>
+          <p>GitHub, Spring Boot, Maven, Agile / Scrum, SDLC documentation</p>
         </div>
 
       </div>
+
+      <!-- Certifications row -->
+      <div class="certs-row">
+        <h3 class="certs-title">Certifications</h3>
+        <div class="certs-list">
+          <div class="cert-badge">
+            <span class="cert-icon">🏆</span>
+            <div>
+              <strong>Professional Scrum Master I (PSM I)</strong>
+              <p>Scrum.org</p>
+            </div>
+          </div>
+          <div class="cert-badge">
+            <span class="cert-icon">🔒</span>
+            <div>
+              <strong>Intermediate Cybersecurity</strong>
+              <p>CodePath &nbsp;·&nbsp; Expected May 2026</p>
+            </div>
+          </div>
+          <div class="cert-badge">
+            <span class="cert-icon">💻</span>
+            <div>
+              <strong>Certificate – Application Development</strong>
+              <p>Year Up United &nbsp;·&nbsp; 2025–2026</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- ======== PROJECTS ======== -->
-  <section class="section" id="projects">
+  <section class="section section-alt" id="projects">
     <div class="container">
-      <h2 class="section-title"><span class="section-num">03.</span> Projects</h2>
+      <h2 class="section-title"><span class="section-num">04.</span> Projects</h2>
       <p class="section-sub">Some things I've built</p>
 
       <!-- Featured Project -->
@@ -173,16 +269,17 @@
         <div class="project-info">
           <p class="project-overline">Featured Project</p>
           <h3 class="project-title">
-            <a href="https://github.com/hanaatinaf/springboot-ecommerce-api" target="_blank">
+            <a href="https://github.com/hanaatinaf/springboot-ecommerce-api" target="_blank" rel="noopener">
               Grocery Store E-Commerce API
             </a>
           </h3>
           <div class="project-desc-card">
             <p>
-              A full-stack grocery store application where users can browse products,
-              filter by category and price, manage a shopping cart, and update their
-              profile. Built with <span class="accent">Spring Boot</span> and secured
-              with <span class="accent">JWT authentication</span>.
+              Full-stack grocery store application where users browse products,
+              filter by category and price, manage a shopping cart, and update
+              their profile. Built with <span class="accent">Spring Boot</span>
+              and secured with <span class="accent">JWT authentication</span>.
+              REST API tested with Insomnia / Postman.
             </p>
           </div>
           <ul class="project-tech">
@@ -190,11 +287,11 @@
             <li>Spring Boot</li>
             <li>JWT</li>
             <li>MySQL</li>
-            <li>JavaScript</li>
-            <li>HTML/CSS</li>
+            <li>Spring Security</li>
+            <li>HTML / CSS / JS</li>
           </ul>
           <div class="project-links">
-            <a href="https://github.com/hanaatinaf/springboot-ecommerce-api" target="_blank" class="project-link" aria-label="GitHub">
+            <a href="https://github.com/hanaatinaf/springboot-ecommerce-api" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
               </svg>
@@ -203,74 +300,129 @@
         </div>
       </div>
 
-      <!-- Other Projects Grid -->
+      <!-- Project Cards -->
       <h3 class="other-projects-title">Other Noteworthy Projects</h3>
       <div class="projects-grid">
 
         <div class="project-card">
           <div class="card-top">
             <div class="folder-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
             </div>
             <div class="card-links">
-              <a href="https://github.com/hanaatinaf/springboot-ecommerce-api" target="_blank" aria-label="GitHub">
+              <a href="https://github.com/hanaatinaf/AbyssiniaEthiopianRestaurant" target="_blank" rel="noopener" aria-label="GitHub">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
                 </svg>
               </a>
             </div>
           </div>
-          <h3>Shopping Cart API</h3>
-          <p>REST endpoints for managing cart operations — add, update, remove items, auto-calculate subtotal, tax, and total.</p>
+          <h3>Abyssinia Ethiopian Restaurant</h3>
+          <p>Fully functional Java console app featuring dynamic plate customization, tiered pricing, and automated receipt generation using Java Time API &amp; File I/O.</p>
           <ul class="card-tech">
-            <li>Spring Boot</li><li>MySQL</li><li>REST</li>
+            <li>Java</li><li>OOP</li><li>File I/O</li><li>Enums</li>
           </ul>
         </div>
 
         <div class="project-card">
           <div class="card-top">
             <div class="folder-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
             </div>
             <div class="card-links">
-              <a href="https://github.com/hanaatinaf/springboot-ecommerce-api" target="_blank" aria-label="GitHub">
+              <a href="https://github.com/hanaatinaf/CafeLedger" target="_blank" rel="noopener" aria-label="GitHub">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
                 </svg>
               </a>
             </div>
           </div>
-          <h3>JWT Auth System</h3>
-          <p>Secure user authentication flow with JWT tokens, Spring Security configuration, and role-based access control.</p>
+          <h3>CafeLedger</h3>
+          <p>Java management application focused on data integrity, logical efficiency, and financial tracking. Uses Java Collections for filtering and CSV-based persistence for data retrieval.</p>
           <ul class="card-tech">
-            <li>JWT</li><li>Spring Security</li><li>Java</li>
+            <li>Java</li><li>Collections</li><li>CSV</li>
           </ul>
         </div>
 
         <div class="project-card">
           <div class="card-top">
             <div class="folder-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
             </div>
             <div class="card-links">
-              <a href="https://github.com/hanaatinaf/springboot-ecommerce-api" target="_blank" aria-label="GitHub">
+              <a href="https://github.com/hanaatinaf/springboot-ecommerce-api" target="_blank" rel="noopener" aria-label="GitHub">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
                 </svg>
               </a>
             </div>
           </div>
-          <h3>Product Filter API</h3>
-          <p>Dynamic product search with filters for category, price range, and product type. Clean DAO pattern with MySQL integration.</p>
+          <h3>JWT Auth &amp; Shopping Cart API</h3>
+          <p>Secure Spring Boot backend with JWT-based auth, role-based access control, and full cart management (add, update, remove, auto-calculate tax &amp; totals).</p>
           <ul class="card-tech">
-            <li>MySQL</li><li>Maven</li><li>HTML/CSS/JS</li>
+            <li>Spring Security</li><li>JWT</li><li>MySQL</li>
           </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== EDUCATION ======== -->
+  <section class="section" id="education">
+    <div class="container">
+      <h2 class="section-title"><span class="section-num">05.</span> Education</h2>
+      <div class="edu-list">
+
+        <div class="edu-card">
+          <div class="edu-left">
+            <div class="edu-dot"></div>
+            <div class="edu-line"></div>
+          </div>
+          <div class="edu-content">
+            <h3>B.A. in Computer Science &amp; Engineering</h3>
+            <p class="edu-school">University of Colorado Denver &nbsp;·&nbsp; Denver, CO</p>
+            <p class="edu-date">Expected May 2027</p>
+            <p class="edu-detail">Relevant Coursework: Algorithms, Database Systems, Programming Languages, IoT, OOP, Data Structures, C++, Python, Engineering Fundamentals.</p>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-left">
+            <div class="edu-dot"></div>
+            <div class="edu-line"></div>
+          </div>
+          <div class="edu-content">
+            <h3>Intermediate Cybersecurity Certification</h3>
+            <p class="edu-school">CodePath &nbsp;·&nbsp; Remote</p>
+            <p class="edu-date">Expected May 2026</p>
+            <p class="edu-detail">Intensive 10-week program focused on threat analysis, network defense, and vulnerability assessment.</p>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-left">
+            <div class="edu-dot"></div>
+            <div class="edu-line"></div>
+          </div>
+          <div class="edu-content">
+            <h3>Certificate in Application Development</h3>
+            <p class="edu-school">Year Up United &nbsp;·&nbsp; Denver, CO</p>
+            <p class="edu-date">August 2025 – January 2026</p>
+            <p class="edu-detail">Intensive program covering programming fundamentals, SQL, software testing, OOP, and Agile/SDLC methodologies. Developed professional skills in business communications and project management.</p>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-left">
+            <div class="edu-dot"></div>
+          </div>
+          <div class="edu-content">
+            <h3>Associate of Science in Computer Science</h3>
+            <p class="edu-school">Community College of Aurora &nbsp;·&nbsp; Aurora, CO</p>
+            <p class="edu-date">Graduated August 2024 &nbsp;·&nbsp; GPA: 3.34</p>
+            <p class="edu-detail">Recipient of the CCA Foundation Scholarship. Coursework: OOP, C++, Python, Data Structures, Engineering Fundamentals.</p>
+          </div>
         </div>
 
       </div>
@@ -280,21 +432,32 @@
   <!-- ======== CONTACT ======== -->
   <section class="section section-alt" id="contact">
     <div class="container contact-container">
-      <p class="contact-overline"><span class="section-num">04.</span> What's Next?</p>
+      <p class="contact-overline"><span class="section-num">06.</span> What's Next?</p>
       <h2 class="contact-title">Get In Touch</h2>
       <p class="contact-desc">
         I'm currently open to new opportunities. Whether you have a question,
-        a project idea, or just want to say hi — my inbox is always open!
+        a project idea, or just want to connect — my inbox is always open!
       </p>
-      <a href="mailto:hana@example.com" class="btn-primary contact-btn">Say Hello</a>
+      <a href="mailto:hanaatinaf2@gmail.com" class="btn-primary contact-btn">Say Hello</a>
+
+      <div class="contact-details">
+        <a href="tel:7206611529" class="contact-detail-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.64 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          720-661-1529
+        </a>
+        <a href="mailto:hanaatinaf2@gmail.com" class="contact-detail-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          hanaatinaf2@gmail.com
+        </a>
+      </div>
 
       <div class="social-links">
-        <a href="https://github.com/hanaatinaf" target="_blank" aria-label="GitHub">
+        <a href="https://github.com/hanaatinaf" target="_blank" rel="noopener" aria-label="GitHub">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
           </svg>
         </a>
-        <a href="https://linkedin.com/in/hanaatinaf" target="_blank" aria-label="LinkedIn">
+        <a href="https://linkedin.com/in/hanaatinaf" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
             <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
@@ -307,21 +470,21 @@
   <!-- ======== FOOTER ======== -->
   <footer class="footer">
     <p>Designed &amp; Built by <span class="accent">Hana Atinaf</span></p>
-    <p class="footer-sub">Built with HTML, CSS &amp; JavaScript</p>
+    <p class="footer-sub">Built with HTML, CSS &amp; JavaScript &nbsp;·&nbsp; U.S. Citizen &nbsp;·&nbsp; Colorado</p>
   </footer>
 
-  <!-- Side Social Bar -->
+  <!-- Side Social Bar Left -->
   <div class="side-social left">
     <ul>
       <li>
-        <a href="https://github.com/hanaatinaf" target="_blank" aria-label="GitHub">
+        <a href="https://github.com/hanaatinaf" target="_blank" rel="noopener" aria-label="GitHub">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
           </svg>
         </a>
       </li>
       <li>
-        <a href="https://linkedin.com/in/hanaatinaf" target="_blank" aria-label="LinkedIn">
+        <a href="https://linkedin.com/in/hanaatinaf" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
             <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
@@ -331,9 +494,9 @@
     </ul>
   </div>
 
-  <!-- Side Email Bar -->
+  <!-- Side Email Bar Right -->
   <div class="side-social right">
-    <a href="mailto:hana@example.com" class="side-email">hana@example.com</a>
+    <a href="mailto:hanaatinaf2@gmail.com" class="side-email">hanaatinaf2@gmail.com</a>
   </div>
 
   <script src="script.js"></script>

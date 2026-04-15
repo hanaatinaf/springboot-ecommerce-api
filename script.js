@@ -67,7 +67,7 @@ const revealObserver = new IntersectionObserver(
 
 // Add reveal class to elements we want to animate in
 const revealTargets = document.querySelectorAll(
-  '.about-text, .about-image-wrap, .skill-card, .featured-project, .project-card, .contact-container'
+  '.about-text, .about-image-wrap, .skill-card, .featured-project, .project-card, .contact-container, .exp-panel, .edu-card, .cert-badge'
 );
 
 revealTargets.forEach((el, i) => {
@@ -98,10 +98,22 @@ const activeLinkObserver = new IntersectionObserver(
 
 sections.forEach(s => activeLinkObserver.observe(s));
 
+// ---------- EXPERIENCE TABS ----------
+document.querySelectorAll('.exp-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.exp-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.exp-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    const panel = document.getElementById('panel-' + tab.dataset.target);
+    if (panel) panel.classList.add('active');
+  });
+});
+
 // ---------- TYPED EFFECT (hero title) ----------
 const titles = [
   'I build things for the web.',
-  'I design secure backends.',
+  'I design secure systems.',
+  'I bridge tech & business.',
   'I love REST APIs.',
 ];
 let titleIndex = 0;
@@ -173,5 +185,5 @@ if (window.matchMedia('(pointer: fine)').matches) {
 
 // ---------- CONSOLE EASTER EGG ----------
 console.log('%c Hi there! 👋', 'color:#64ffda;font-size:20px;font-weight:bold;');
-console.log('%c Built by Hana Atinaf — Java Developer', 'color:#a8b2d8;font-size:13px;');
-console.log('%c Check out https://github.com/hanaatinaf', 'color:#8892b0;font-size:12px;');
+console.log('%c Built by Hana Atinaf — Software Developer & Solution Architect Intern', 'color:#a8b2d8;font-size:13px;');
+console.log('%c github.com/hanaatinaf  |  linkedin.com/in/hanaatinaf', 'color:#8892b0;font-size:12px;');
