@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trail & Beyond | Hiking Inspiration</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ============================================================
+         HEADER / NAVIGATION
+         The <header> wraps site-wide branding and navigation.
+         <nav> holds links; <ul> + <li> is the standard list pattern.
+    ============================================================ -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="logo">
+          <span class="logo-icon">&#9968;</span>
+          <span class="logo-text">Trail & Beyond</span>
+        </div>
+
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li><a href="#destinations" class="nav-link">Destinations</a></li>
+            <li><a href="#tips" class="nav-link">Trail Tips</a></li>
+            <li><a href="#favorites" class="nav-link">My Favorites</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         HERO SECTION
+         A full-width banner with a headline and search bar.
+         The gradient overlay makes the text readable over the image.
+    ============================================================ -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Find Your Next Adventure</h1>
+        <p class="hero-subtitle">
+          Discover trails, peaks, and hidden paths around the world.
+        </p>
+        <div class="search-bar">
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search destinations or trail names..."
+          />
+          <button id="searchBtn" class="btn btn-primary">Search</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FILTER BAR
+         Buttons that let the user filter destination cards by category.
+         JavaScript reads the data-category attribute to match cards.
+    ============================================================ -->
+    <section class="filter-bar container">
+      <h2 class="section-title">Explore Destinations</h2>
+      <div class="filters">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="mountain">&#127956; Mountains</button>
+        <button class="filter-btn" data-category="forest">&#127795; Forests</button>
+        <button class="filter-btn" data-category="coastal">&#127754; Coastal</button>
+        <button class="filter-btn" data-category="desert">&#127964; Desert</button>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         DESTINATIONS GRID
+         Cards are injected here by JavaScript (app.js).
+         Keeping HTML minimal and letting JS build the UI is a
+         fundamental pattern called "dynamic rendering."
+    ============================================================ -->
+    <section id="destinations" class="destinations container">
+      <div id="destinationsGrid" class="destinations-grid">
+        <!-- Cards rendered by JavaScript -->
+      </div>
+      <p id="noResults" class="no-results hidden">
+        No destinations match your search. Try a different keyword!
+      </p>
+    </section>
+
+    <!-- ============================================================
+         FAVORITES SECTION
+         Filled dynamically when the user hearts a destination.
+    ============================================================ -->
+    <section id="favorites" class="favorites-section">
+      <div class="container">
+        <h2 class="section-title">My Favorites</h2>
+        <p class="favorites-hint">Click the &#10084; on any card to save it here.</p>
+        <div id="favoritesGrid" class="destinations-grid">
+          <!-- Favorite cards appear here -->
+        </div>
+        <p id="noFavorites" class="no-results">
+          You haven't saved any favorites yet!
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TRAIL TIPS
+         Static content cards — great for practicing CSS grid/flex.
+    ============================================================ -->
+    <section id="tips" class="tips-section">
+      <div class="container">
+        <h2 class="section-title">Trail Tips for Beginners</h2>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <div class="tip-icon">&#128694;</div>
+            <h3>Start Small</h3>
+            <p>
+              Choose trails rated "easy" first. Build endurance over weeks
+              before tackling difficult terrain.
+            </p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">&#128167;</div>
+            <h3>Stay Hydrated</h3>
+            <p>
+              Drink at least half a litre of water per hour on the trail.
+              Never rely on finding water in the wild.
+            </p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">&#127758;</div>
+            <h3>Navigation</h3>
+            <p>
+              Download offline maps before you go. Cell signal disappears
+              fast once you're deep in nature.
+            </p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">&#129512;</div>
+            <h3>Leave No Trace</h3>
+            <p>
+              Pack out all your rubbish. Stay on marked paths to protect
+              fragile ecosystems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         QUOTE / INSPIRATION BANNER
+    ============================================================ -->
+    <section class="quote-banner">
+      <div class="container">
+        <blockquote id="inspirationQuote" class="quote-text">
+          "The mountains are calling and I must go."
+        </blockquote>
+        <cite id="quoteAuthor" class="quote-author">— John Muir</cite>
+        <button id="newQuoteBtn" class="btn btn-outline">New Quote</button>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>&#9968; Trail & Beyond &mdash; Built with HTML, CSS & JavaScript</p>
+      </div>
+    </footer>
+
+    <!-- Script loaded at end of body so the HTML is ready before JS runs -->
+    <script src="js/app.js"></script>
+  </body>
+</html>

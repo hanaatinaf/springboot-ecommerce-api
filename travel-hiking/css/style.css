@@ -1,0 +1,589 @@
+/* ================================================================
+   CSS FUNDAMENTALS GUIDE
+   ----------------------------------------------------------------
+   Each block below is labelled with the concept it demonstrates.
+   Key concepts covered:
+     1. CSS Custom Properties (variables)
+     2. Box Model (padding, margin, border)
+     3. Flexbox layout
+     4. CSS Grid layout
+     5. Pseudo-classes (:hover, :active, .active)
+     6. Transitions & animations
+     7. Media queries (responsive design)
+     8. BEM-style class naming
+================================================================ */
+
+/* ----------------------------------------------------------------
+   1. CSS CUSTOM PROPERTIES (variables)
+   Define once, reuse everywhere. Change one value → whole site updates.
+---------------------------------------------------------------- */
+:root {
+  --color-primary:    #2e7d32; /* dark green */
+  --color-accent:     #ff7043; /* warm orange */
+  --color-bg:         #f5f5f0;
+  --color-surface:    #ffffff;
+  --color-text:       #1a1a1a;
+  --color-text-light: #666666;
+  --color-danger:     #e53935;
+
+  --radius-sm:  6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-card: 0 4px 16px rgba(0,0,0,0.10);
+  --shadow-hover: 0 8px 28px rgba(0,0,0,0.16);
+
+  --transition: 0.25s ease;
+
+  --font-body:    'Segoe UI', system-ui, sans-serif;
+  --font-heading: Georgia, 'Times New Roman', serif;
+}
+
+/* ----------------------------------------------------------------
+   RESET & BASE
+   Browsers apply their own default styles. We clear them for
+   consistency across Chrome, Firefox, Safari, etc.
+---------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box; /* padding/border included in width */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* smooth-scroll when clicking anchor links */
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* ----------------------------------------------------------------
+   UTILITY: .container
+   A centred wrapper with max-width so content doesn't stretch
+   across a 4K monitor. Horizontal padding adds "breathing room."
+---------------------------------------------------------------- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ----------------------------------------------------------------
+   UTILITY: .hidden
+   JavaScript toggles this class to show/hide elements.
+---------------------------------------------------------------- */
+.hidden {
+  display: none !important;
+}
+
+/* ================================================================
+   HEADER / NAVIGATION
+   Uses Flexbox: display:flex turns children into a row.
+   justify-content spreads logo and nav to opposite sides.
+================================================================ */
+.site-header {
+  position: sticky;          /* stays at the top while you scroll */
+  top: 0;
+  z-index: 100;              /* sits above other content */
+  background: var(--color-surface);
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;       /* vertically centre children */
+  justify-content: space-between; /* push logo left, nav right */
+  height: 64px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.logo-icon {
+  font-size: 1.75rem;
+  color: var(--color-primary);
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* Navigation list */
+.nav-list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;          /* remove bullet points */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent; /* invisible underline (space holder) */
+  transition: border-color var(--transition), color var(--transition);
+}
+
+/* :hover is a PSEUDO-CLASS — styles applied when the user hovers */
+.nav-link:hover {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+/* ================================================================
+   HERO SECTION
+   Background image + overlay + centred content.
+   position:relative on parent lets overlay fill 100%.
+================================================================ */
+.hero {
+  position: relative;
+  height: 520px;
+  background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&q=80');
+  background-size: cover;     /* fill the box, crop if needed */
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dark gradient over the photo → text stays readable */
+.hero-overlay {
+  position: absolute;
+  inset: 0;                   /* shorthand for top/right/bottom/left: 0 */
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.3),
+    rgba(0,0,0,0.6)
+  );
+}
+
+/* z-index: 1 lifts content above the overlay (z-index: 0) */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  padding: 0 1rem;
+  max-width: 680px;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.2rem); /* fluid: scales with viewport */
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  margin-bottom: 0.75rem;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  margin-bottom: 1.75rem;
+}
+
+/* Search bar — Flexbox row */
+.search-bar {
+  display: flex;
+  gap: 0;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;          /* clips children to the rounded corners */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+
+.search-input {
+  flex: 1;                   /* takes all available width */
+  padding: 0.9rem 1.25rem;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+/* ================================================================
+   BUTTONS
+   Two variants: .btn-primary (filled) and .btn-outline (ghost).
+================================================================ */
+.btn {
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;           /* pointer cursor on hover */
+  transition: background var(--transition), color var(--transition),
+              transform var(--transition);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #1b5e20;
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: #fff;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* "Press" effect — scale down slightly when clicked */
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* ================================================================
+   FILTER BAR
+================================================================ */
+.filter-bar {
+  padding: 2.5rem 1.25rem 1rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;           /* wraps to next row on small screens */
+  gap: 0.6rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.1rem;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  background: transparent;
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {         /* .active class added by JavaScript */
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* ================================================================
+   DESTINATIONS GRID
+   CSS Grid: auto-fills columns that are at least 280px wide.
+   This is "responsive by default" — no media queries needed here.
+================================================================ */
+.destinations {
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ================================================================
+   DESTINATION CARD
+   Position:relative on the card lets the favourite button sit
+   in the top-right corner absolutely.
+================================================================ */
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition), box-shadow var(--transition);
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* lift card up */
+  box-shadow: var(--shadow-hover);
+}
+
+.card-img-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* crops image to fill the box */
+  transition: transform 0.4s ease;
+}
+
+.card:hover .card-img {
+  transform: scale(1.06);     /* subtle zoom on hover */
+}
+
+/* Category badge — positioned top-left inside image */
+.card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: var(--radius-lg);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Favourite heart button — positioned top-right */
+.fav-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: rgba(255,255,255,0.85);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition), background var(--transition);
+}
+
+.fav-btn:hover {
+  transform: scale(1.2);
+}
+
+.fav-btn.active {
+  background: #ffebee;
+  color: var(--color-danger);
+}
+
+/* Card text body */
+.card-body {
+  padding: 1rem 1.1rem 1.25rem;
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  margin-bottom: 0.3rem;
+}
+
+.card-location {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-bottom: 0.6rem;
+}
+
+.card-location::before {
+  content: '📍 ';
+}
+
+.card-description {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  line-height: 1.55;
+  margin-bottom: 0.9rem;
+}
+
+.card-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+}
+
+.difficulty {
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.difficulty.easy   { background: #e8f5e9; color: #2e7d32; }
+.difficulty.medium { background: #fff8e1; color: #f57f17; }
+.difficulty.hard   { background: #fce4ec; color: #c62828; }
+
+/* ================================================================
+   NO RESULTS MESSAGE
+================================================================ */
+.no-results {
+  text-align: center;
+  color: var(--color-text-light);
+  padding: 2rem;
+  font-size: 1rem;
+  grid-column: 1 / -1;       /* spans all grid columns */
+}
+
+/* ================================================================
+   FAVORITES SECTION
+================================================================ */
+.favorites-section {
+  background: #f0f4f0;
+  padding: 3rem 0;
+}
+
+.favorites-hint {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* ================================================================
+   TRAIL TIPS
+================================================================ */
+.tips-section {
+  padding: 3.5rem 0;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.tip-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.25rem;
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  transition: transform var(--transition);
+}
+
+.tip-card:hover {
+  transform: translateY(-4px);
+}
+
+.tip-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.tip-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+
+.tip-card p {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+/* ================================================================
+   QUOTE BANNER
+================================================================ */
+.quote-banner {
+  background: var(--color-primary);
+  color: #fff;
+  text-align: center;
+  padding: 3.5rem 1.25rem;
+}
+
+.quote-text {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-style: italic;
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0 auto 0.75rem;
+}
+
+.quote-author {
+  display: block;
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 1.25rem;
+}
+
+/* ================================================================
+   FOOTER
+================================================================ */
+.site-footer {
+  background: #1a1a1a;
+  color: #aaa;
+  text-align: center;
+  padding: 1.25rem;
+  font-size: 0.88rem;
+}
+
+/* ================================================================
+   ANIMATIONS — @keyframes
+   Used to fade/slide cards in when they appear.
+================================================================ */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeSlideIn 0.4s ease both;
+}
+
+/* ================================================================
+   MEDIA QUERIES — Responsive Design
+   Adjust layout for screens narrower than 600px (mobile).
+================================================================ */
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    height: auto;
+    padding: 0.75rem 0;
+    gap: 0.5rem;
+  }
+
+  .nav-list {
+    gap: 1rem;
+  }
+
+  .hero {
+    height: 380px;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    border-radius: var(--radius-md);
+  }
+
+  .search-input {
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+  }
+
+  .btn-primary {
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+  }
+}
